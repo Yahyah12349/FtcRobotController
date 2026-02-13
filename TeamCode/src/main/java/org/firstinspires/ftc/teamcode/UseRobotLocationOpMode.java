@@ -9,11 +9,43 @@ public class UseRobotLocationOpMode extends OpMode {
 
     @Override
     public void init() {
-
+        robotLocationPractice.setAngle(0);
+        robotLocationPractice.setX(0);
     }
 
     @Override
     public void loop() {
+        if (gamepad1.a){
+            robotLocationPractice.turnRobot(0.1);
 
+        } else if (gamepad1.b) {
+            robotLocationPractice.turnRobot(-0.1);
+
+        }
+
+
+        if (gamepad1.dpad_left){
+            robotLocationPractice.changeX(0.1);
+        } else if (gamepad1.dpad_right) {
+            robotLocationPractice.changeX(-0.1);
+        }
+
+
+        if (gamepad1.dpad_up){
+        }
+       telemetry.addData("X", robotLocationPractice.getX());
+        telemetry.addData("Heading", robotLocationPractice.getHeading());
+        telemetry.addData("Angle", robotLocationPractice.getAngle());
     }
 }
+
+/*
+1. add a double getAngle to you RobotLocationPractice and display in OpMode
+2. Inside RobotLocationPractice,
+-creat a double x
+-double getx()
+void changeX(double changeAmount)
+-setX(double x0
+
+3.
+ */
