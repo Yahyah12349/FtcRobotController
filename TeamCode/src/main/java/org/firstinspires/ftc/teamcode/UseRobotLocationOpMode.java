@@ -29,10 +29,14 @@ public class UseRobotLocationOpMode extends OpMode {
         } else if (gamepad1.dpad_right) {
             robotLocationPractice.changeX(-0.1);
         }
-
-
         if (gamepad1.dpad_up){
+            robotLocationPractice.changeY(0.1);
+        } else if (gamepad1.dpad_down) {
+            robotLocationPractice.changeY(-0.1);
         }
+
+
+        telemetry.addData("Y", robotLocationPractice.getY());
        telemetry.addData("X", robotLocationPractice.getX());
         telemetry.addData("Heading", robotLocationPractice.getHeading());
         telemetry.addData("Angle", robotLocationPractice.getAngle());
